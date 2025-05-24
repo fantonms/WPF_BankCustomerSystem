@@ -36,7 +36,7 @@
             Width="150"
             Style="{StaticResource TextBoxStyle}"
             Template="{DynamicResource TextBoxCornerTemplate}"
-            Text="{Binding UserName}" />
+            Text="{Binding User.Account}" />
         <Label
             Grid.Row="1"
             Grid.Column="0"
@@ -54,6 +54,7 @@
             Grid.Column="0"
             Grid.ColumnSpan="2"
             Content="{Binding ButtonText}"
+            Command="{Binding SaveCommand}"
             Style="{StaticResource ButtonDefaultTemplate}" />
 
 

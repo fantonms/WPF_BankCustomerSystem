@@ -40,6 +40,8 @@ namespace WPF_BankCustomerSystem.Repositories
 
         public bool Update(UserInfo model)
         {
+            model.LastUpdateUserId = LoginInfo.CurrentUser.UserId;
+            model.LastUpdateTime = DateTime.Now;
             return SqlSugarHelper.Db.Updateable(model).ExecuteCommand() > 0;
         }
     }

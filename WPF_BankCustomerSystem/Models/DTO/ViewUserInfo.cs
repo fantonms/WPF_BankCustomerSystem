@@ -1,4 +1,4 @@
-﻿using SqlSugar;
+using SqlSugar;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,6 +40,23 @@ namespace WPF_BankCustomerSystem.Models.DTO
                 if (lastUpdateUserName != value)
                 {
                     lastUpdateUserName = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        private DateTime? lastUpdateTime;
+        /// <summary>
+        /// 最后一次修改时间
+        /// </summary>
+        public DateTime? LastUpdateTime
+        {
+            get { return lastUpdateTime; }
+            set
+            {
+                if (lastUpdateTime != value)
+                {
+                    lastUpdateTime = value;
                     OnPropertyChanged();
                 }
             }

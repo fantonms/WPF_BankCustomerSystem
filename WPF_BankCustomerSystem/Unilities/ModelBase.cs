@@ -19,7 +19,7 @@ namespace WPF_BankCustomerSystem.Unilities
             }
         }
 
-        private DateTime createTime = new DateTime();
+        private DateTime createTime = DateTime.Now;
 
         public DateTime CreateTime
         {

@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using SqlSugar;
 using WPF_BankCustomerSystem.Models;
 using WPF_BankCustomerSystem.Models.DTO;
@@ -59,6 +60,7 @@ namespace WPF_BankCustomerSystem.ViewModels
         {
             get
             {
+                
                 return new RelayCommand((obj) =>
                 {
                     if (string.IsNullOrEmpty(Account))
@@ -73,7 +75,8 @@ namespace WPF_BankCustomerSystem.ViewModels
                     }
 
                     var exp = Expressionable.Create<ViewUserInfo>();
-                    exp.And(x => x.Account == Account && x.Password == Password);
+                    exp.And(x => x.Account == Account);
+                    exp.And(x => x.Password == Password);
                     exp.And(x => x.Status == 0);
                     var userInfo = repository.GetList(exp);
                     if (userInfo.Count > 1)
