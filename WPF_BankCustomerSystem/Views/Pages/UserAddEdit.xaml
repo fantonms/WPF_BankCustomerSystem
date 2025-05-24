@@ -1,0 +1,70 @@
+﻿<Window
+    x:Class="WPF_BankCustomerSystem.Views.Pages.UserAddEdit"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:WPF_BankCustomerSystem.Views.Pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:pages="clr-namespace:WPF_BankCustomerSystem.ViewModels.Pages"
+    xmlns:r="clr-namespace:System.Resources;assembly=System.Windows.Forms"
+    Title="{Binding WindowTitle}"
+    WindowStartupLocation="CenterScreen"
+    Width="400"
+    Height="300"
+    d:DataContext="{d:DesignInstance Type=pages:UserAddEditViewModel}"
+    ResizeMode="NoResize"
+    mc:Ignorable="d">
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="80" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Label
+            Grid.Row="0"
+            Grid.Column="0"
+            Content="账号:"
+            Style="{StaticResource LableStyle}" />
+        <TextBox
+            Grid.Row="0"
+            Grid.Column="1"
+            Width="150"
+            Style="{StaticResource TextBoxStyle}"
+            Template="{DynamicResource TextBoxCornerTemplate}"
+            Text="{Binding UserName}" />
+        <Label
+            Grid.Row="1"
+            Grid.Column="0"
+            Content="密码:"
+            Style="{StaticResource LableStyle}" />
+        <TextBox
+            Grid.Row="1"
+            Grid.Column="1"
+            Width="150"
+            Style="{StaticResource TextBoxStyle}"
+            Template="{DynamicResource TextBoxCornerTemplate}"
+            Text="{Binding User.Password}" />
+        <Button
+            Grid.Row="2"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Content="{Binding ButtonText}"
+            Style="{StaticResource ButtonDefaultTemplate}" />
+
+
+
+
+
+
+
+
+
+
+
+    </Grid>
+</Window>
